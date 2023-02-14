@@ -8,7 +8,7 @@ The macro-topics covered are:
 
 
 ## Attention!
-> The main file is written in Markdown with some elements in LaTeX, so, to decently view it, especially for expression, open the file in some application like [Logseq](https://logseq.com/) or [Obsidian](https://obsidian.md/) or something similar.
+> The main file is written in Markdown with some elements in LaTeX, so, to decently view it, especially for expression, open the file in some application which supports these featuers (like [Logseq](https://logseq.com/) or [Obsidian](https://obsidian.md/) or something similar).
 >
 
 This repo is in construction, so it is not fully completed, but it will be soon, so stay updated if you are interested

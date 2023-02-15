@@ -1,3 +1,4 @@
+
 $$
 \begin{align*}
 \tilde{V}(z) = V_0^+ e^{-jβz} + V_0^- e^{jβz}

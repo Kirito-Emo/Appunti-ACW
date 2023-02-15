@@ -2,8 +2,9 @@
 Notes about the Antenna and Wireless Connections Course
 
 The macro-topics covered are:
-- Transmission Lines (TEM, Quarter-wave Line)
-- Antenna Fundamentals (Polarization, Radiation Pattern)
+- Transmission Lines
+- Antenna Fundamentals
+- Cantenna(s)
 
 
 

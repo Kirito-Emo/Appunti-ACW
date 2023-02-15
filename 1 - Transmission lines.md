@@ -1,11 +1,11 @@
-# Elementi iniziali essenziali
+# 1.1 - Elementi iniziali essenziali
 - *l* è la lunghezza del collegamento
 - *λ* è la lunghezza dell'onda
 - *ω* è la frequenza angolare pari a *2πf*
 - *c* è la velocità della luce
 - *l/c* è il ritardo di propagazione
-# Modi propaganti
-## Linee di trasmissione trasverso-elettromagnetiche (TEM)
+# 1.2 - Modi propaganti
+## 1.2.1 - Linee di trasmissione trasverso-elettromagnetiche (TEM)
 Le onde che si propagano lungo queste linee sono formate da campi elettrici e magnetici completamente trasversi rispetto alla direzione di propagazione.
 Una caratteristica comune delle linee TEM è quella di essere formate da due linee parallele conduttive.
 Tra le linee TEM compaiono:
@@ -14,13 +14,13 @@ Tra le linee TEM compaiono:
 - Linea a piani paralleli
 - Linea di trasmissione
 - Linea Micro-strip
-## Linee di trasmissione di ordine superiore
+## 1.2.2 - Linee di trasmissione di ordine superiore
 Le onde che si propagano lungo queste linee hanno almeno un componente significativo del campo rivolto nella direzione di propagazione.
 Tra le linee di ordine superiore si trovano:
 - Guide d'onda
 - Barre dielettriche
 - Fibre ottiche
-# Modello a costanti concentrate
+# 1.3 - Modello a costanti concentrate
 ![[Rappresentazione TEM.png]]
 Questa rappresentazione, detta ***modello circuitale a costanti concentrate***, è formata da 4 elementi fondamentali, detti ***parametri della linea di trasmissione***:
 - **R'**: la *resistenza* complessiva di entrambi i conduttori per unità di lunghezza (Ω/m)
@@ -33,7 +33,7 @@ Questa rappresentazione, detta ***modello circuitale a costanti concentrate***, 
 
 - $μ_c$ e $σ_c$ sono la **permabilità magnetica** e la **conducibilità elettrica** dei conduttori
 - $ε$, $μ$ e $σ$ sono la **permittività elettrica**, la **permabilità magnetica** e la **conducibilità elettrica** del materiale isolante che separa i conduttori
-# Equazioni dei telegrafisti
+# 1.4 - Equazioni dei telegrafisti
 Equazione per $\tilde{V}$:
 $$
 - \frac{d\tilde{V}}{dz} = (R' + jωL')\tilde{I}(z)
@@ -43,7 +43,7 @@ $$
 -\frac{d\tilde{I}}{dz} = (G' + jωC')\tilde{V}(z)
 $$
 Queste sono le equazioni del telegrafo in forma fasoriale, dove $\tilde{V}$ e $\tilde{I}$ sono fasori.
-## Propagazione delle onde in una linea di trasmissione
+## 1.4.1 - Propagazione delle onde in una linea di trasmissione
 Le due equazioni precedenti possono essere disaccoppiate per ottenere un'equazione d'onda disaccoppiata del secondo ordine per ciascun fasore.
 L'equazione per $\tilde{V}$ si ricava derivando entrambi i membri dell'[[equazione 1.0]] rispetto a $z$ ottenendo:
 $$
@@ -80,7 +80,7 @@ $$
 \end{align*}
 $$
 dove $e^{-γz}$ rappresenta la *propagazione* dell'onda nella direzione delle z positive, mentre  $e^{γz}$ rappresenta la *propagazione* dell'onda nella direzione delle z negative.
-# Lossless TLs
+# 1.5 - Lossless TLs
 Una linea di trasmissione è caratterizzata da due proprietà fondamentali:
 - la costante di propagazione $γ$
 - l'impedenza caratteristica $Z_0$
@@ -105,7 +105,7 @@ che in questo caso è un numero reale.
 
 ![[Tabella 2.2.png]]
 
-## Coefficiente di riflessione in tensione
+## 1.5.1 - Coefficiente di riflessione in tensione
 Ponendo $γ = jβ$ per la linea lossless, le espressioni della tensione complessiva e corrente complessiva nella linea, date dalle equazioni [[Onde progressive]], diventano:
 $$
 \begin{align*}
@@ -150,7 +150,7 @@ $$
 dove $|Γ|$ è il modulo di Γ e $θ_ρ$ è il suo angolo di fase. Si noti che $|Γ| \le 1$.
 Un carico è detto *adattato alla linea* se $Z_L = Z_0$, perché in tal caso non si ha *riflessione* da parte del carico stesso ($Γ=0$ e $V_0^- = 0$).
 
-# Impedenza di input
+## 1.5.2 - Impedenza di input
 Gli andamenti delle onde stazionarie indicano che in una linea disadattata i moduli delle tensioni e delle correnti oscillano in funzione della posizione lungo la linea e sono in opposizione di fase tra di loro.
 Dunque, anche il rapporto tra tensione e corrente, detto ***impedenza di ingresso $Z_{in}$*** dovrà variare in funzione della posizione.
 Si otterrà:
@@ -200,8 +200,8 @@ Z_0 [\frac{Z_L + j Z_0 tanβl} {Z_0 + j Z_L tanβl}] \tag*{Ω}
 \end{gather}
 $$
 ![[Formule inverse impedenza in input.png]]
-# Trasferimento di potenza in una Lossless TL
-### Potenza media
+## 1.5.3 - Trasferimento di potenza in una Lossless TL
+### 1.5.3.1 - Potenza media
 Il flusso di potenza media è uguale alla potenza istantanea mediata su un periodo temporale $T = 1/f = 2π/ω$.
 
 Per l'onda incidente, la potenza media è:
@@ -228,11 +228,11 @@ La *potenza media netta* trasferita al carico è:
 $$
 P_{av} = P_{av}^i + P_{av}^r = \frac{|V_0^+|^2}{2Z_0} [1 - |Γ|^2] \tag{W}
 $$
-# Adattamento delle reti
+# 1.6 - Adattamento delle reti
 ![[Circuito-Quarto-d'Onda.png]]
-Lo scopo dell'adattamento delle reti è quello di eliminare le riflessioni nel punto MM'. È possibile ottenere ciò, progettando la rete in modo da avere l'impedenza in ingresso $Z_{in} = Z_0$. Se la rete è senza perdite tutta la potenza sarà redirezionata verso il carico. 
+Lo scopo dell'adattamento delle reti è quello di eliminare le riflessioni nel punto MM'. È possibile ottenere ciò, progettando la rete in modo da avere l'impedenza in ingresso $Z_{in} = Z_0$. Se la rete è senza perdite tutta la potenza sarà re-direzionata verso il carico. 
 
-## Trasformatore a quarto d'onda
+## 1.6.1 - Trasformatore a quarto d'onda
 Un caso particolare è quello in cui la lunghezza della linea è pari a un quarto d'onda, oppure $λ/4 + nλ/2$, dove $n=0$ o un intero positivo, che corrisponde a $βl = (2π/λ)(λ/4) = π/2$.
 
 > Nella pratica sto andando ad aggiungere un pezzo di cavo chiamato *trasformatore a quarto d'onda*.
@@ -286,7 +286,7 @@ la quale è reale se $Φ_{Γ_L}- 2βl' = 0, \pm π$.
 
 Solo a quel punto il trasformatore a quarto d'onda può essere applicato al carico $R_L = Z_{in}(z = -l')$.
 
-# Lossy TLs
+# 1.7 - Lossy TLs
 Questo è il caso con perdite, in cui la *costante di attenuazione α*, della quale si compone γ (costante di propagazione), è diversa da zero, ottenendo una γ complessa.
 
 In questo caso $R', G' \ne 0$, per tale motivo l'equazione di γ diventa:
@@ -314,7 +314,7 @@ $$
 Z_0 = \sqrt{\frac{L'_{eq}} {C'_{eq}}} = |Z_0| e^{jΦ_z}
 $$
 
-## Condizione di Heaviside
+## 1.7.1 - Condizione di Heaviside
 Se si progetta opportunamente il cavo in utilizzo, si può ottenere anche una linea non dispersiva, in cui vi è ancora la presenza della componente α come della β, ma tornano in una condizione lossless, ottenendo una linea che presenta ancora perdita, ma non dispersione.
 
 $$
@@ -338,7 +338,7 @@ Z_0 = \sqrt{\frac{L'_{eq}} {C'_{eq}}} = \sqrt{\frac{L'}{C'}}
 $$
 dove $Z_0$ è un numero reale e non più complesso.
 
-## Perdita di potenza (dB)
+## 1.7.2 - Perdita di potenza (dB)
 Nella linea con perdita, a causa di quest'ultime, la potenza che arriva nella sezione del carico non è la stessa che immetto nella linea.
 
 La potenza immessa nella rete è pari a:

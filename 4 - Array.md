@@ -94,6 +94,7 @@ $$
 
 \end{gather}
 $$
+
 Si noti come:
 - il primo termine (gli elementi antecedenti la sommatoria) dipende solo dall'elemento di indice $0$;
 - il secondo elemento (l'intera sommatoria) dipende, invece, anche dalle alimentazioni dei singoli elementi e da $θ$.

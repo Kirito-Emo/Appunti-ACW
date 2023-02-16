@@ -50,7 +50,7 @@ Si sta così definendo una nuova distanza di Fraunhofer per un array di antenne.
 Ora che si conosce la distanza tale per cui si può considerare un'antenna come interna alla regione di campo lontano, è necessario approssimare, ad un valore identico, le $R_n$ distanze di ogni antenna, facente parte dell'array, dal punto di osservazione. <br>
 ![[Linear array- Fraunhofer region.png]] <br>
 Per calcolare l'approssimazione necessaria si prendono in conto delle considerazioni.
-Se si immaginasse di portare P (punto di osservazione) ad una distanza sempre maggiore dall'array, le $R_n$ distanze diverrebbero uguali e parallele tra loro.
+Se si immaginasse di portare P (punto di osservazione) ad una distanza sempre maggiore dall'array, le $R_n$ distanze diverrebbero *uguali e parallele tra loro*.
 $R_n$ appare, nella [[Formula campo elettrico totale array]] al *denominatore della sommatoria* e all'*esponente di fase*. Per quanto concerne la sua presenza nel *termine di ampiezza*, si può approssimare $R_n$ a $r$, commettendo un errore fisso accettabile. <br>
 **Prima approssimazione: $R_n = r$** <br>
 
@@ -136,34 +136,109 @@ $$
 ovvero, che $θ = π/2$ quando $δ = 0$. Ciò significa che non vi è differenza di fase nell'alimentazione dei singoli elementi dell'array, perciò tutti gli elementi hanno la stessa ampiezza e la stessa fase in alimentazione. <br>
 Si dirà, quindi, che: **un array lineare broadside è costituito da elementi in fase**. <br>
 ### 4.3.1.1 - Guadagno di un array lineare broadside
+Per capire come si comporta il guadagno per questo tipo di array, basta considerare una schiera di array di dipoli a mezz'onda. Tale array sarà più direttivo di un singolo dipolo a mezz'onda. <br>
 ![[Guagano array broadside-1.png]] <br>
-Per capire come si comporta il guadagno per questo tipo di array, basta considerare una schiera di array di dipoli a mezz'onda. Tale array sarà più direttivo di un singolo dipolo a mezz'onda.
-Per calcolare quanto detto sopra bisogna effettuare i seguenti passaggi:
-
-<br>
-![[Guadagno array broadside-2.png]] <br>
-
+Quanto appena esplicato è confermato dal grafico sopra-presente. Infatti, mentre col singolo dipolo a mezz'onda si aveva un intervallo angolare di $78°$, con un array di 6 dipoli si ha un intervallo di $17.2°$, ciò significa che il lobo principale è più stretto, il che significa, a sua volta, una maggior direttività e, di conseguenza, un maggior guadagno.
+Il guadagno dell'array lineare broadside aumenta all'aumentare dei suoi elementi:<br>
+![[Guadagno array broadside-2.png]]  <br>
 
 ## 4.3.2 - Endfire Linear Array
 Questo array ha il lobo principale del diagramma di radiazione lungo l'asse dell'array
-
 $$
 θ_{max} = \cos^{-1}{\frac{-δ}{β_0 d}} = 0,π \hspace{10mm} \rightarrow \hspace{10mm} δ = \mp β_0d
 $$
+In questo caso, si vuole alimentare l'elemento della schiera in modo tale che la direzione di massimo del fattore di array coincida con l'asse della schiera.
 
 ## 4.3.3 - Beam Scanning
+Questa tecnica consente di **variare la direzione di puntamento** attraverso una semplice rete di alimentazione. Esistono, infatti, circuiti atti proprio a **manipolare il ritardo di fase**, che si comportano, quindi, come sfasatori. <br>
+Il ritardo di fase $δ$ tra elementi adiacenti può essere utilizzato per orientare la direzione del fascio dell'array broadside a $θ = 90°$ a qualsiasi angolo $θ_0$ desiderato. Oltre a eliminare la necessità di guidare meccanicamente un'antenna per cambiare la direzione di puntamento, la guida elettronica, attraverso l'uso di sfasatori controllati elettronicamente, consente la scansione del lobo a velocità molto elevate. <br>
+Una tecnica nota come ==**beam scanning (scansione di frequenza)**== può essere utilizzata per fornire il **controllo della fase di tutti gli elementi contemporaneamente**. Un **punto di alimentazione comune** è collegato agli elementi radianti tramite **linee di trasmissione di lunghezza variabile**. <br>
+L'utilizzo di cavi di diversa lunghezza è dovuto alla variazione di fase, legata alla lunghezza del cavo, a cui gli stessi cavi sono soggetti, sia nel caso ideale senza perdite che in quello reale. <br>
+Sia, dunque, $l_0$ la lunghezza del cavo di indice $0$, nonché cavo di riferimento. La lunghezza del cavo di indice $1$ sarà: $l_1 = l_0 + l$, dove $l$ è la lunghezza di un pezzo di cavo aggiuntivo.
+Iterando il ragionamento sino all'n-esimo caso, si avrà: $l_n = l_0 + nl$. <br>
+![[Beam scanning-1.png]] <br>
+La propagazione del segnale lungo una linea di trasmissione di lunghezza $l_n$ è caratterizzata da un **fattore di fase**:
+$$
+e^{-j β l_n}
+$$
+dove:
+- $β = 2π f/v$ è la **costante di fase** e
+- $v$ è la **velocità**.
 
+La formula per il calcolo della differenza di fase in funzione della lunghezza del cavo è la seguente:
+$$
+ψ_n(f) - ψ_0(f) = nδ(f) = δ_n(f) = -β(l_n - l_0) = - \frac{2πf}{v}(l_n - l_0) = - \frac{2πf}{v}nl
+$$
+Si può notare la relazione che vede la differenza di fase dipendere dalla lunghezza incrementale dei cavi, dalla velocità e dalla frequenza di lavoro. <br>
+Si supponga ora, di scegliere una frequenza di riferimento $f_0$ al fine di fissare la lunghezza incrementale, $l$ sarà pari a $v/f_0$ (lunghezza d'onda alla frequenza $f_0$), per un numero intero di volte.
+$$
+l = n_0 \frac{v}{f_0}
+$$
+Calcolando la differenza di fase tra l'elemento di indice $0$ e l'elemento di indie $1$ alla frequenza di riferimento $f_0$, si avrà:
+$$
+δ_1(f_0) = - \frac{2 π f_0}{v} l = - \frac{2 π f_0}{v} (n_0 \frac{v}{f_0}) = - 2 π n_0
+$$
+Si ricava che tale differenza di fase è un multiplo intero di $2π$, ciò significa che in realtà **non c'è differenza di fase** tra i primi due elementi. <br>
+Tra l'elemento $0$ e l'elemento $2$ la differenza di fase sarà:
+$$
+δ_2(f_0) = - \frac{2 π f_0}{v} 2l = -4 π n_0
+$$
+ossia, il doppio rispetto alla precedente differenza e così via per gli $n$ elementi. <br>
+Alla frequenza $𝑓_0$, la schiera, per le scelte fatte sulla lunghezza incrementale, si comporta come un array broadside: tutti gli elementi sono alimentati in egual modo in ampiezza e fase e la direzione di puntamento è quella perpendicolare all'asse della schiera. <br>
+Per cambiare la direzione di massimo senza variare la lunghezza $l$, bisogna lavorare sul secondo grado di libertà, la frequenza. <br>
+Si sceglie una nuova frequenza diversa dalla precedente ($\ne f_0$), definita come $f_1 = f_0 + Δf$, dove $Δf$ può assumere valori positivi o negativi. <br>
+Andando a calcolare nuovamente le differenze di fase, si avrà:
+$$
+δ_1(f_0 + Δf) = - \frac{2 π(f_0 + Δf)}{v} l = -2π n_0 - \frac{2π f_0}{v} l \frac{Δf}{f_0} = - 2π n_0 - 2π n_0 \frac{Δf}{f_0} = - 2π n_0 + δ
+$$
+La presenza di $Δf$ introduce un termine aggiuntivo $δ$. Questo fattore incrementale di fase dipende dal rapporto: $Δf/f_0$. <br>
+Iterando il calcolo della differenza di fase per tutti gli elementi
+$$
+δ_2(f_0 + Δf) = 2δ_1(f_0 + Δf) = - 4π n_0 + 2δ
+$$
+si ottiene che la differenza tra un elemento ed il suo vicino è uguale a $δ$, il quale è determinato dalla scelta della frequenza. Fissata una frequenza infatti, si conoscerà $δ$, ciò permetterà di ricavare la direzione di puntamento $θ_0$ (angolo di scansione).
+
+$$
+φ = β_0 d \cos{θ + δ} = 0 \hspace{7mm} \rightarrow \hspace{7mm} β_0 d \cos{θ_0} = 2π n_0 \frac{Δf}{f_0} \hspace{7mm} \rightarrow \hspace{7mm} θ_0 = \cos^{-1}{\frac{2π n_0}{β_0 d} \frac{Δf}{f_0}}
+$$
+Quando $f$ viene modificata da $f_0$ a $f_0 + Δf$, anche $β_0$ cambia. Tuttavia, se $Δf/f_0$ è piccolo, $β_0$ può essere considerato costante e pari a $β_0 = 2πf_0 / c_0$.
 
 # 4.4 - Smart Antenna Array
-
+Se lo sfasamento tra gli elementi dell'array viene regolato elettronicamente, la configurazione dell'antenna risultante può essere modificata in direzione e larghezza anche se gli elementi dell'array sono fisicamente fissi. Questo concetto di base identifica un'**antenna phased array**.<br>
+![[Smart Antenna Arrays.png]] <br>
+Un'**antenna intelligente (smart antenna)** è un array in grado di regolare il diagramma di radiazione in base alle richieste dell'utente. Può avere un'ampia direttività nelle applicazioni in cui non è possibile utilizzare un'antenna fissa ad alto guadagno, come dispositivi portatili o mobili. <br>
+Gli errori nella direzione di puntamento sono soggetti a correzione da parte dell'**algoritmo di adattamento**, quindi l'utente non ha bisogno di mantenere un orientamento preciso. <br>
+Il guadagno di potenza risultante può estendere la portata o ridurre la potenza di trasmissione (o entrambi). <br>
+**L'uso di antenne a guadagno più elevato pone più radiazioni dove è desiderato e meno dove non lo è, riducendo così le interferenze complessive**. La loro intelligenza risiede nelle loro strutture di elaborazione del segnale digitale. Esistono diversi tipi di smart antenna.
 
 ## 4.4.1 - Switched Beam Antennas
-
+Questo array è in grado di fornire un numero finito di sfasamenti e quindi di direzioni del lobo per mezzo di un lobo digitale che si forma sulla base della *matrice di Butler*. **Un modulo di controllo decide il lobo attivo in tempo reale in base alla posizione dell'utente mobile**. <br>
+L'alimentazione di queste schiere è creata in modo tale da fornire un numero finito di lobi (quindi di direzioni) principali. <br>
+Il principale svantaggio è dato dal fatto che, se l'end user si sposta e di conseguenza l'antenna cambia lobo principale, ma in tale direzione arriva un’interferenza, le prestazioni di collegamento deteriorano.
 
 ## 4.4.2 - Adaptive Antennas
+Questo array è in grado di **modificare in tempo reale il diagramma di radiazione** dirigendo un angolo di guadagno direttivo prossimo allo zero verso l'interferente, **preservando un guadagno direttivo elevato** verso l'utente desiderato o verso access points. Gli array adattivi sono complessi e relativamente costosi rispetto ad altre soluzioni. <br>
+Queste antenne sono in grado di modificare la direzione di puntamento nonché dei nulli, in base alla direzione d'arrivo rispettivamente dei segnali provenienti da end user o da sorgenti d'interferenza. <br>
+![[Adaptive antennas.png]] <br>
 
+| Caratteristiche  | Vantaggi  |
+|---|---|
+| **GUADAGNO**: input da antenne multiple sono combinati per ottimizzare la potenza disponibile, necessaria a stabilire un certo livello di copertura  | **MIGLIOR RANGE/COPERTURA**: Concentrare l’energia inviata in una cella aumenta il range e la copertura delle stazioni base. Requisiti di alimentazioni inferiori consentono, inoltre, un ottimo tempo di vita della batteria e un handset più piccolo/leggero  |
+| **RIGETTO DELLE INTERFERENZE**: Il pattern dell'antenna può essere generato verso sorgenti di interferenza co-canale, migliorando il rapporto segnale-interferenza dei segnali ricevuti  | **MAGGIORE CAPACITÀ**: Il controllo preciso della qualità del segnale e la mitigazione dell'interferenza combinati al riutilizzo della frequenza riducono la distanza (o dimensione del cluster) migliorando la capacità. Alcune tecnologie adattive (come la divisione dello spazio ad accesso multiplo) supportano l'uso delle frequenze all'interno della stessa cella  |
+| **DIVERSITÀ SPAZIALE**: le informazioni composite dell'array vengono utilizzate per ridurre al minimo il fading e altri effetti indesiderati della propagazione multipath  | **RIGETTO DEL MULTIPATH**: Può utilizzare l'effettivo ritardo di fase del canale, consentendo il supporto di bit rate più alti senza l'uso di un equalizzatore.  |
+| **EFFICIENZA DI POTENZA**: combina input a più elementi per ottimizzare il guadagno di elaborazione disponibile nel downlink (verso l’utente)  | **SPESE RIDOTTE**: Ne risulteranno costi inferiori dell'amplificatore, consumo energetico e maggiore affidabilità.  |
+
+![[Adaptive antennas - 2.png]] <br>
 
 ### 4.4.2.1 - Multipath
-
+Le **antenne adattive e a fascio commutato soffrono di multipath**: un fenomeno di *perdita di informazioni*, dovuto al fatto che, nel percorso tra trasmittente e ricevente, il segnale può compiere diversi cammini.
+Tale problema è dovuto alla presenza di ostacoli e riflessioni del segnale, che venendo riflesso arriva più volte all'antenna di ricezione. <br>
+![[Multipath.png]] <br>
 
 # 4.5 - Sistemi di Antenne MIMO
+La tecnologia **Multiple Input - Multiple Output (MIMO)** utilizza più trasmettitori e ricevitori per trasferire *più dati contemporaneamente*. Sfrutta a suo favore il fenomeno di propagazione multipath in cui le informazioni trasmesse rimbalzano su pareti, soffitti e altri oggetti, raggiungendo l'antenna ricevente tramite angoli diversi in momenti diversi. 
+Con MIMO, l'estremità ricevente utilizza un algoritmo o un'elaborazione speciale del segnale per ordinare i segnali multipli al fine di produrre un segnale che dispone dei dati originariamente trasmessi.<br>
+![[MIMO - 1.png]]<br>
+MIMO fa funzionare le antenne in modo più intelligente consentendo loro di inviare e ricevere più flussi spaziali. Le antenne riceventi combinano flussi di dati provenienti da percorsi diversi e a tempi diversi sfruttando il multipath invece di mitigarlo.
+I sistemi MIMO offrono *velocità dati, portata e affidabilità superiori* senza richiedere larghezza di banda aggiuntiva o potenza di trasmissione. <br>
+![[MIMO - 2.png]]<br>

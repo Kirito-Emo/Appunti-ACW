@@ -100,21 +100,70 @@ Si noti come:
 - il secondo elemento (l'intera sommatoria) dipende, invece, anche dalle alimentazioni dei singoli elementi e da $θ$.
 
 ## 4.2.2 - Principio di moltiplicazione dei pattern
+$$
+S(r, θ, Φ) = \frac{|A_r|^2 |\underline{C}(θ, Φ)|^2}{2 ζ_0 r^2} |\sum_{n=0}^{N-1}{\frac{A_n}{A_r} e^{j β_0 nd \cos{θ}}}|^2  = S_e(r, θ, Φ) F_a
+$$
+La densità di potenza dell'array è il prodotto di due fattori. Il primo fattore $S_e$ è la densità di potenza irradiata da un singolo elemento assunto come riferimento, il secondo è il fattore di array:
+$$
+F_a = |\sum_{n=0}^{N-1} {\frac{A_n}{A_r} e^{j β_0 nd \cos{θ}}}|^2 = |\sum_{n=0}^{N-1} {\frac{a_n}{a_r} e^{j(ψ_n - ψ_r)} e^{j β_0 nd \cos{θ}}}|^2
+$$
+
+Il **fattore di array** è *funzione delle posizioni dei singoli elementi* e dei *loro coefficienti di alimentazione*, ma non della specifica tipologia di radiatori utilizzati. <br>
+**Il principio della moltiplicazione dei modelli consente la valutazione della densità di potenza dell'array calcolando prima il modello di potenza con gli elementi dell'array sostituiti con radiatori isotropi, che produce il fattore dell'array, e quindi moltiplicando il risultato per la densità di potenza per un singolo elemento**. <br>
+Il fattore di array è governato dalla **distribuzione di ampiezza dell'array** $a_n$, che serve a controllare la *forma del diagramma* di radiazione dell'array, e dalla **distribuzione di fase dell'array** $ψ_n$, che può essere utilizzata per *orientare la sua direzione*. <br>
+Questo è importantissimo poiché sta a significare che è possibile far variare:
+- forma e ampiezza del lobo principale, variando l'ampiezza del coefficiente di alimentazione dei singoli elementi.
+- direzione di puntamento variando la fase del coeff. di alimentazione dei singoli elementi.
 
 # 4.3 - Array Lineare Uniforme
+Si consideri un array lineare avente una **distribuzione di ampiezza uniforme** ($\frac{a_n}{a_0} = 1$, l'ampiezza del coefficiente di alimentazione è uguale per tutti gli elementi) e un **ritardo di fase da elemento a elemento linearmente progressivo** ($ψ_n - ψ_0 = nδ$, la differenza di fase tra due elementi vicini tra loro è sempre la stessa). <br>
+Si noti che l'elemento con indice $0$ è preso come riferimento:
+$$
+F_a = |\sum_{n=0}^{N-1} {e^{jn(β_0 d \cos{θ + δ)}}}|^2 = |\sum_{n=0}^{N-1} {e^{jnφ}}|^2 = |\frac{\sin{(Nφ/2)}}{\sin{(φ/2)}}|^2
+$$
+Da tale espressione di $F_a$ si può dedurre che il fattore di array assume valore massimo quando è verificata la seguente uguaglianza:
+$$
+F_{a_{max}}(φ) = N^2 \hspace{5mm} \text{con} \hspace{5mm} φ = β_0 d \cos{θ + δ} = 0
+$$
+ed è proprio grazie a quest'ultima che si comprende che la densità di potenza dipende direttamente dal fattore di array, dunque la densità di potenza massima (e quindi anche la direzione di puntamento dell'array) dipende dal valore massimo del fattore di array.
 
 ## 4.3.1 - Broadside Linear Array
+Questo array ha il fascio principale del diagramma di radiazione sempre nella direzione ortogonale all’asse dell’array. Per tale motivo, questo tipo di array ha $F$ massimo per $θ=\frac{π}{2}$.
+Imponiamo quindi che $θ$ sia pari a $π/2$ nella [[Formula di F massimo (fattore di array)]] e otteniamo:
+$$
+θ_{max} = \cos^{-1}{\frac{-δ}{β_0d}} = \frac{π}{2} \hspace{10mm} \rightarrow \hspace{10mm} δ = 0
+$$
+ovvero, che $θ = π/2$ quando $δ = 0$. Ciò significa che non vi è differenza di fase nell'alimentazione dei singoli elementi dell'array, perciò tutti gli elementi hanno la stessa ampiezza e la stessa fase in alimentazione. <br>
+Si dirà, quindi, che: **un array lineare broadside è costituito da elementi in fase**. <br>
+### 4.3.1.1 - Guadagno di un array lineare broadside
+![[Guagano array broadside-1.png]] <br>
+Per capire come si comporta il guadagno per questo tipo di array, basta considerare una schiera di array di dipoli a mezz'onda. Tale array sarà più direttivo di un singolo dipolo a mezz'onda.
+Per calcolare quanto detto sopra bisogna effettuare i seguenti passaggi:
+
+<br>
+![[Guadagno array broadside-2.png]] <br>
+
 
 ## 4.3.2 - Endfire Linear Array
+Questo array ha il lobo principale del diagramma di radiazione lungo l'asse dell'array
+
+$$
+θ_{max} = \cos^{-1}{\frac{-δ}{β_0 d}} = 0,π \hspace{10mm} \rightarrow \hspace{10mm} δ = \mp β_0d
+$$
 
 ## 4.3.3 - Beam Scanning
 
+
 # 4.4 - Smart Antenna Array
+
 
 ## 4.4.1 - Switched Beam Antennas
 
+
 ## 4.4.2 - Adaptive Antennas
 
+
 ### 4.4.2.1 - Multipath
+
 
 # 4.5 - Sistemi di Antenne MIMO

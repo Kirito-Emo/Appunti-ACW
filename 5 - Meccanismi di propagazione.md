@@ -30,6 +30,7 @@ Si parlerà, nello specifico, di onde piane uniformi.
 
 # 5.1 - Onde piane uniformi
 Il campo elettrico nella zona di campo lontana può essere espresso come:
+
 $$
 \underline{E}(\underline{r}) = \underline{E_0} e^{-j \underline{kr}}
 $$
@@ -38,6 +39,7 @@ dove
 - il termine $\underline{E_0}$ racchiude le informazioni sulla polarizzazione del campo elettrico;
 - $\underline{r}$ è il vettore posizione del campo elettrico;
 - $\underline{k}$ è il **vettore di propagazione**, un vettore complesso esprimibile come combinazione di due vettori:
+	
 	$$
 	\underline{k} = \underline{β} -j \underline{α}
 	$$
@@ -49,25 +51,30 @@ Un'onda piana si dice **uniforme** quando $\underline{α}$ e $\underline{β}$ so
 
 ## 5.1.1 - Campo elettrico e magnetico di onde piane uniformi
 Un’onda piana si dice quindi uniforme quando $\underline{α} = α \hat{β}$. Potremo quindi scrivere il campo elettrico come:
+
 $$
 \underline{E}(\underline{r}) = \underline{E}_0 e^{-j (β - jα) \hat{β} \cdot \underline{r}} = \underline{E}_0 e^{-j k \hat{β} \cdot \underline{r}} = \underline{E}_0 e^{-α \hat{β} \cdot \underline{r}} e^{-j β \hat{β} \cdot \underline{r}}
 $$
 <br> dove
 - $k$ è la **costante di propagazione** o numero d'onda:
+	
 	$$
 	k = β -j α = ω_0 \sqrt{μ ε_{eq}}
 	$$
-<br> Il campo elettrico potrà essere riscritto come:
+
+Il campo elettrico potrà essere riscritto come:
 $$
 \underline{H}(\underline{r}) = \underline{H}_0 e^{-j k \hat{β} \cdot \underline{r}} = \frac{1}{ζ} \hat{β} \times \underline{E}_0 e^{-j k \hat{β} \cdot \underline{r}} \equiv \frac{1}{\sqrt{μ/ε_{eq}}} \hat{β} \times \underline{E}_0 e^{-j k \hat{β} \cdot \underline{r}}
 $$
+
 Il campo magnetico ha una struttura identica a quella dell'elettrico. Il vettore $H_0$, che dipende dal punto di osservazione, può essere scritto in funzione del vettore $E_0$, dove $ζ$ è l'impedenza intrinseca del mezzo di propagazione.
 In generale, dunque anche nel caso di trasmissione con perdite, l'impedenza può essere riscritta come in formula, dove $μ$ e $ε$ sono rispettivamente la *permeabilità dello spazio libero* e *costante dielettrica complessa*.
-Mentre, nel caso di propagazione senza perdite (σ = 0) risulta: <br>
+Mentre, nel caso di propagazione senza perdite (σ = 0) risulta:
+
 $$
 α = 0 \hspace{10mm} \text{e} \hspace{10mm} k = β = ω_0 \sqrt{με}
 $$
-<br>
+
 Il prodotto vettoriale ci dice che campo elettrico, magnetico e versore $β$ sono tra loro perpendicolari, questa terna ha nello spazio sempre la stessa configurazione.
 Il **prodotto tra campo elettrico e magnetico fornisce sempre la direzione di fase** (che si scoprirà essere proprio la direzione di propagazione).
 
@@ -76,7 +83,7 @@ Il **prodotto tra campo elettrico e magnetico fornisce sempre la direzione di fa
 $$
 \underline{S}(\underline{r}) = \frac{1}{2} \underline{E}(\underline{r}) \times \underline{H}^*(\underline{r}) = \frac{1}{2} [\underline{E}_0 e^{-j k \hat{β} \cdot \underline{r}}] \times [\frac{1}{ζ} \hat{β} \times \underline{E}_0 e^{-j k \hat{β} \cdot \underline{r}}]^* = \frac{|\underline{E}_0|^2}{2 ζ^*} e^{-2 α \hat{β} \cdot \underline{r}} - \hat{β} = S(\underline{r})\hat{β}
 $$
-<br>
+
 Si noti che il vettore di Poynting è diretto nella direzione di $\hatβ$, dunque si può affermare che **in una propagazione piana uniforme $\hatβ$ identifica la direzione di Poynting**.
 In assenza di perdite, la costante di attenuazione è uguale a quella di fase, per cui il termine esponenziale diventa 1  ($e^{-2 α \hat{β} \cdot \underline{r}} = 1$) e l'impedenza intrinseca risulta puramente reale.
 

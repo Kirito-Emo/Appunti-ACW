@@ -81,7 +81,7 @@ Il prodotto vettoriale ci dice che campo elettrico, magnetico e versore $β$ son
 Il **prodotto tra campo elettrico e magnetico fornisce sempre la direzione di fase** (che si scoprirà essere proprio la direzione di propagazione).
 
 ## 5.2.2 - Vettore di Poynting di onde piane uniformi
-<br>
+
 $$
 \underline{S}(\underline{r}) = \frac{1}{2} \underline{E}(\underline{r}) \times \underline{H}^*(\underline{r}) = \frac{1}{2} [\underline{E}_0 e^{-j k \hat{β} \cdot \underline{r}}] \times [\frac{1}{ζ} \hat{β} \times \underline{E}_0 e^{-j k \hat{β} \cdot \underline{r}}]^* = \frac{|\underline{E}_0|^2}{2 ζ^*} e^{-2 α \hat{β} \cdot \underline{r}} - \hat{β} = S(\underline{r})\hat{β}
 $$

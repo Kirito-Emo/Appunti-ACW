@@ -1,4 +1,5 @@
-Finora è stato osservato il comportamento, nella regione di campo lontano, del campo elettrico e magnetico irradiati dalle antenne <br>
+Finora è stato osservato il comportamento, nella regione di campo lontano, del campo elettrico e magnetico irradiati dalle antenne
+
 $$
 \begin{gather}
 

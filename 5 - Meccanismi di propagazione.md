@@ -19,6 +19,7 @@ $$
 
 \end{gather}
 $$
+
 Dall'antenna trasmittente partono infiniti raggi irradiati.
 Si consideri un punto di osservazione (il punto rosso nella figura sottostante), situato nella Far Field region, dove sarà posta l'antenna ricevente o un ostacolo.
 Tutti i raggi che collegano la trasmittente e il punto, che cadono nell'intorno (zona blu in figura) del punto di osservazione, possono essere considerati tra loro paralleli. <br>
@@ -32,6 +33,7 @@ Il campo elettrico nella zona di campo lontana può essere espresso come:
 $$
 \underline{E}(\underline{r}) = \underline{E_0} e^{-j \underline{kr}}
 $$
+
 dove
 - il termine $\underline{E_0}$ racchiude le informazioni sulla polarizzazione del campo elettrico;
 - $\underline{r}$ è il vettore posizione del campo elettrico;
@@ -39,6 +41,7 @@ dove
 	$$
 	\underline{k} = \underline{β} -j \underline{α}
 	$$
+	
 	dove:
 	- $\underline{β}$ è il **vettore di fase**: $\underline{β} = β \hat{β}$, con $β$ *costante di fase (reale)* e $\hat{β}$ *direzione della variazione di fase*;
 	- $α$ è il **vettore di attenuazione**: $\underline{α} = α \hat{α}$, con $α$ *costante di attenuazione* e $\hat{α}$ *direzione dell'attenuazione*.
@@ -49,28 +52,31 @@ Un’onda piana si dice quindi uniforme quando $\underline{α} = α \hat{β}$. P
 $$
 \underline{E}(\underline{r}) = \underline{E}_0 e^{-j (β - jα) \hat{β} \cdot \underline{r}} = \underline{E}_0 e^{-j k \hat{β} \cdot \underline{r}} = \underline{E}_0 e^{-α \hat{β} \cdot \underline{r}} e^{-j β \hat{β} \cdot \underline{r}}
 $$
-dove
+<br> dove
 - $k$ è la **costante di propagazione** o numero d'onda:
 	$$
 	k = β -j α = ω_0 \sqrt{μ ε_{eq}}
 	$$
-Il campo elettrico potrà essere riscritto come:
+<br> Il campo elettrico potrà essere riscritto come:
 $$
 \underline{H}(\underline{r}) = \underline{H}_0 e^{-j k \hat{β} \cdot \underline{r}} = \frac{1}{ζ} \hat{β} \times \underline{E}_0 e^{-j k \hat{β} \cdot \underline{r}} \equiv \frac{1}{\sqrt{μ/ε_{eq}}} \hat{β} \times \underline{E}_0 e^{-j k \hat{β} \cdot \underline{r}}
 $$
 Il campo magnetico ha una struttura identica a quella dell'elettrico. Il vettore $H_0$, che dipende dal punto di osservazione, può essere scritto in funzione del vettore $E_0$, dove $ζ$ è l'impedenza intrinseca del mezzo di propagazione.
 In generale, dunque anche nel caso di trasmissione con perdite, l'impedenza può essere riscritta come in formula, dove $μ$ e $ε$ sono rispettivamente la *permeabilità dello spazio libero* e *costante dielettrica complessa*.
-Mentre, nel caso di propagazione senza perdite (σ = 0) risulta:
+Mentre, nel caso di propagazione senza perdite (σ = 0) risulta: <br>
 $$
 α = 0 \hspace{10mm} \text{e} \hspace{10mm} k = β = ω_0 \sqrt{με}
 $$
+<br>
 Il prodotto vettoriale ci dice che campo elettrico, magnetico e versore $β$ sono tra loro perpendicolari, questa terna ha nello spazio sempre la stessa configurazione.
 Il **prodotto tra campo elettrico e magnetico fornisce sempre la direzione di fase** (che si scoprirà essere proprio la direzione di propagazione).
 
 ## 5.1.2 - Vettore di Poynting di onde piane uniformi
+
 $$
 \underline{S}(\underline{r}) = \frac{1}{2} \underline{E}(\underline{r}) \times \underline{H}^*(\underline{r}) = \frac{1}{2} [\underline{E}_0 e^{-j k \hat{β} \cdot \underline{r}}] \times [\frac{1}{ζ} \hat{β} \times \underline{E}_0 e^{-j k \hat{β} \cdot \underline{r}}]^* = \frac{|\underline{E}_0|^2}{2 ζ^*} e^{-2 α \hat{β} \cdot \underline{r}} - \hat{β} = S(\underline{r})\hat{β}
 $$
+<br>
 Si noti che il vettore di Poynting è diretto nella direzione di $\hatβ$, dunque si può affermare che **in una propagazione piana uniforme $\hatβ$ identifica la direzione di Poynting**.
 In assenza di perdite, la costante di attenuazione è uguale a quella di fase, per cui il termine esponenziale diventa 1  ($e^{-2 α \hat{β} \cdot \underline{r}} = 1$) e l'impedenza intrinseca risulta puramente reale.
 

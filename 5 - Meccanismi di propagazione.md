@@ -632,27 +632,73 @@ che coinvolge i seguenti termini:
 Mentre i primi due coefficienti descrivono il passaggio del segnale attraverso i mezzi, l’ultimo tiene conto del fatto che il centro di fase fissato dal punto di primo impatto non ha la stessa fase degli altri punti di impatto
 
 # 5.13 - Ottica geometrica
+Tutto quello che abbiamo visto riguardo la propagazione di onde piane risulta essere un’approssimazione, siccome queste ultime non esistono. I risultati ottenuti vengono utilizzati nell’Ottica Geometrica. <br>
+L'**Ottica Geometrica (GO)** è un modo semplice per trovare un valore approssimativo del campo del ricevitore utilizzando i meccanismi di propagazione relativi alle onde piane.
+**Per poterla applicare è richiesta l'applicazione di una serie di assunzioni**, tutte in riferimento alla lunghezza d’onda del segnale che si sta propagando. <br>
+La lunghezza d'onda dev’essere corta rispetto a tutte le seguenti lunghezze: 
+1. distanza tra la sorgente e le prime interazioni lungo ciascun raggio;
+2. distanza tra le interazioni individuali;
+3. dimensioni dei singoli ostacoli;
+4. curvature dei confini;
 
+In particolare, l’ottica geometrica sfrutta i risultati delle onde piane in 4 differenti processi:
+1. innanzitutto calcola tutti i possibili percorsi dei raggi tra il trasmettitore e i punti di campo coerenti con le leggi di riflessione e rifrazione di Snell (**ray-tracing**);
+2. poi **calcola i coefficienti di riflessione e trasmissione di Fresnel** in ciascuno dei punti coinvolti come se le onde incidenti fossero piane e i confini fossero piani e infiniti;
+3. in seguito, per ciascun percorso del raggio, **corregge l'ampiezza** per tenere conto della **curvatura del fronte d'onda e della curvatura di eventuali contorni** (cioè s'introduce un fattore correttivo che tiene conto della curvatura del segnale, poiché le onde reali sono sferiche, e degli ostacoli);
+4. infine **somma tutti i contributi** del percorso dei raggi, tenendo debitamente conto sia dell'ampiezza che della fase.
 
 ## 5.13.1 - I limiti della GO
-
+L'approccio GO porta a previsioni del tutto errate quando si considerano i campi nella **regione d'ombra (shadow region)** dietro un ostacolo, poiché prevede che in tale regione non esista nessun campo. <br>
+![[limiti GO.png]] <br>
+La presenza del campo elettromagnetico nella regione d'ombra è giustificata da un altro fenomeno ondulatorio: la **diffrazione**.
 
 # 5.14 - Diffrazione
-
+==La **diffrazione** è la *deviazione della propagazione dell'onda* dalla rappresentazione in linea retta usata in ottica geometrica==. La diffrazione ==spiega la curvatura delle onde attorno ai bordi di ostacoli== e può essere compresa più facilmente usando il **principio di Huygen**. <br>
+![[Diffrazione - 1.png]] <br>
 
 ## 5.14.1 - Principio di Huygens
+1. **Ogni elemento di un fronte d'onda** in un determinato momento può essere considerato il **centro di un disturbo secondario**, che dà origine a onde sferiche;
+2. la posizione del fronte d'onda in qualsiasi momento successivo è l'**inviluppo di tutte queste onde**.
 
+Si supponga di avere un ostacolo opaco, dove i raggi che lo colpiscono vengono bloccati e il raggio che passa sfiorando il bordo definisce un confine luce-ombra.
+Applicando il principio di Huygens: quando il segnale tocca il bordo, il contributo dà luogo a un segnale nella regione d’ombra. <br>
+![[Huygen's principle.png]] <br>
 
 # 5.15 - Teoria geometrica della diffrazione
-
+Un approccio che tiene conto dei bordi degli ostacoli estende l’ottica geometrica per includere la diffrazione, ottenendo così la **teoria geometrica della diffrazione (GTD)**, ideata per la prima volta da Keller negli anni '50. <br>
+L'idea centrale della GTD è che una versione estesa del **principio di Fermat** (cioè: il collegamento effettivo tra due punti attraversati da un raggio è quello che viene percorso nel minor tempo) può essere utilizzata per prevedere l'esistenza di raggi diffratti, i quali possono quindi essere trattati con la facilità di qualsiasi altro raggio in GO.
+Il principio di Fermat per la diffrazione dei bordi prevede che, sul bordo di un ostacolo, un raggio che incide obliquamente generi un cono di raggi diffratti.
+In caso di incidenza normale il cono si riduce a disco. <br>
+![[GTD.png]] <br>
+La formulazione originale di GTD di Keller presentava lo svantaggio di non prevedere correttamente il campo per i punti di campo nella regione di transizione vicino al confine d'ombra. GTD è stato quindi esteso da *Kouyoumjian* e *Pathak* alla **Uniform GTD(UTD)** che si applica in tutti i punti.
 
 ## 5.15.1 - Il cono di Keller
+Keller notò che nel caso di raggio incidente obliquo sullo spigolo, i raggi diffratti si propagavano lungo coni aventi lo spigolo come asse.
+>Il **cono di raggi diffratti** ha preso il nome di **cono di Keller**.
 
+Tale cono è stato determinato sperimentalmente.
+Per ogni raggio incidente su un punto dello spigolo, ve ne sono infiniti diffratti lungo le direttrici del cono di Keller.
+Tra il raggio incidente proveniente da un punto $S$ e il corrispondente diffratto passante per il punto di osservazione $P$, definendo in corrispondenza del punto di diffrazione un versore tangente allo spigolo ($\hat{e}$), in accordo alla legge della diffrazione, esiste la relazione:
 
-## 5.15.2 - Caso bidimensionale
+$$
+\sin{β_0} = |\hat{s}' \times \hat{e}| = |\hat{s} \times \hat{e}|
+$$
 
+### 5.15.1.1 - Caso bidimensionale
+Se $β= 90°$ il raggio incidente è ortogonale allo spigolo e il cono di diffrazione degenera in un disco. Per definizione, nel caso 2D tutti i raggi sono ortogonali allo spigolo.
 
 # 5.16 - Uniform GTD
-
+Il problema nella GTD sviluppata da Keller è legato a non aver considerato il raggio di curvatura della superficie che genera il campo diffratto. Questo fa sì che un semipiano completamente piatto ed uno con un assegnato raggio di curvatura finito vengano ad avere lo stesso coefficiente di diffrazione pur comportandosi in modo diverso dal punto di vista del campo elettromagnetico.
+La teoria di Keller sicuramente migliora la predizione del campo rispetto all’ottica geometrica, ma rimane singolare in particolare in corrispondenza dei confini di transizione tra le regioni ombra. <br>
+![[Uniform GTD.png]] <br>
+Nel 1974 *Kouyoumjian* e *Pathak* presentano la teoria uniforme della diffrazione.
+Essi mostrarono come, moltiplicando il coefficiente di diffrazione di Keller per un’apposita funzione di transizione, si ottenie un campo di valore finito anche in corrispondenza degli **shadow boundaries**.
+Nei punti di singolarità della GTD, la funzione di transizione deve tendere a $0$ con un ordine pari a quello con cui il coefficiente di diffrazione tende ad infinito.
+Inoltre, i due studiosi svilupparono un coefficiente di diffrazione in grado di considerare superfici curve.
 
 # 5.17 - Confronto tra i campi previsti dalla GO e i campi reali che tengono conto del contributo del campo UTD
+![[GO vs Real Fields - 1.png]] <br>
+![[GO vs Real Fields - 2.png]] <br>
+Si noti come fino a $150$ gradi (prima della *soglia RSB*), le previsioni della *GO* siano esatte.
+Tra i $150$ e i $210$ gradi invece (ZONA_2) la *GO* tiene conto soltanto del contributo del campo incidente.
+La *teoria del campo UTD* invece tiene conto anche del contributo di quest’ultimo e fornisce una previsione corretta del campo totale.

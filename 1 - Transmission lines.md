@@ -365,3 +365,22 @@ L'impedenza in input, soggetta anch'essa alle perdite, muterà e vedrà la compa
 $$
 Z_{in}(z = -l) = Z_0 \frac{Z_L + Z_0 \tanh{γl}} {Z_0 + Z_L \tanh{γl}}
 $$
+
+# 1.8 - Connettori
+## 1.8.1 - Connettori N
+I **connettori N**:
+- sono versatili e possono essere utilizzati per applicazioni ad alta potenza;
+- sono fisicamente abbastanza grandi e spesso utilizzati per terminare cavi a bassa perdita di grande diametro;
+- **devono essere allineati e avvitati insieme**, esercitando una forza notevole;
+- sono meccanicamente robusti e adatti per uso esterno (con protezione dalla pioggia);
+- possono essere utilizzati a $10 GHz$.
+
+Si noti che esistono entrambi i tipi $50 Ω$ e $75 Ω$.
+I due sono visivamente quasi identici tranne che per il diametro del conduttore centrale e si accoppieranno tra loro (al punto da essere avvitati insieme), ma un maschio da $75 Ω$ farà solo un contatto intermittente con una femmina da $50 Ω$ e un maschio da $50 Ω$ farà piegare le molle di una femmina $75 Ω$.
+I problemi di connessione risultanti sono frustranti per il debug. <br>
+![[connettori N.png]] <br>
+## 1.8.2 - Connettori BNC
+I **connettori BNC** sono estremamente comuni nei lavori a bassa frequenza e i cavi così equipaggiati sono spesso noti genericamente come cavi coassiali.
+I connettori utilizzano un comodo approccio di attacco *twist-on* e *twist-off* e sono meccanicamente resistenti e facili da usare, anche se la connessione al cavo a volte è fatta in modo impreciso e si guasta sul campo.
+I connettori BNC sono teoricamente adatti a $4 GHz$, ma il loro utilizzo al di sopra di $1 GHz$ è sconsigliato. <br>
+![[connettori BNC.png]] <br>

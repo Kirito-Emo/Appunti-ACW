@@ -130,16 +130,183 @@ $$
 L_{(dB)} = L_{fs (dB)} + L_{ex (dB)}
 $$
 
-# 6.4 - Plane Earth Loss
+# 6.4 - Plane-Earth Loss
+Verrà ora preso in considerazione il modello comprendente due raggi per terra piatta.
+Fissata la posizione delle due antenne il **contributo in prossimità della ricevente è dato da due termini**:
+- uno diretto (detto **LOS**, cioè **Line of side**) e
+- uno per **riflessione dal suolo**.
 
+Si supponga che la distanza in pianta tra le due antenne (distanza tra le loro proiezioni a terra tra due punti) sia molto maggiore delle rispettive altezze delle due antenne. <br>
+![[plane earth loss - 1.png]] <br>
+Il pathloss varrà:
+
+$$
+L_{pe} = \frac{P_{in_T} G_T G_R}{P_{out_R}} = \frac{P_{in_T} G_T G_R}{A_{eff_R} S_R^i} = \frac{P_{in_T} G_T G_R}{A_{eff_R} |E_{tot}^i|^2 / 2 ζ_0}
+$$
+
+Il coefficiente di riflessione, sia per polarizzazione perpendicolare che parallela, può 
+essere approssimato a $-1$ ($Γ \cong -1$). <br>
+Ciò accade perché a grande distanza il raggio $r_2$ viaggia molto vicino al suolo, questo significa che l'angolo di incidenza (l'angolo che forma con la normale alla superficie) rispetto alla normale forma un angolo di $90°$. <br>
+In entrambe le formule della parallelizzazione mi danno coefficienti di riflessione pari a $-1$. <br>
+È dimostrabile che:
+
+$$
+|E_{tot}^i|^2 \cong |E_{dir}^i|^2 4 (\frac{β_0 h_T h_R}{d})^2
+$$
+
+Il collegamento diretto, quindi, dipende dalla distanza tra le due antenne, dalla frequenza e dall'altezza delle due antenne.
+Tale reazione vale per entrambe le polarizzazioni, e ci permette di riscrivere, attraverso una banale sostituzione, il pathloss come:
+
+$$
+L_{pe} = \frac{P_{in_T} G_T G_R}{P_{out_R}} = \frac{P_{in_T} G_T G_R}{A_{eff_R} S_R^i} = \frac{P_{in_T} G_T G_R}{A_{eff_R} \frac{|E_{dir}^i|^2}{2 ζ_0} [4 (\frac{β_0 h_T h_R}{d})^2]} = \frac{L_{fs}}{4 (\frac{β_0 h_T h_R}{d})^2} \cong \frac{(\frac{4 π d}{λ})^2}{4 (\frac{2 π h_T h_R}{λd})^2}
+$$
+
+con:
+
+$$
+L_{pe} = (\frac{d^2}{h_T h_R})^2
+$$
+
+> La $d$ al numeratore sarebbe dovuta essere $r_1$, tuttavia si sta approssimando ulteriormente sfruttando le ipotesi iniziali di grandi distanze.
+
+$$
+L_{pe(dB)} = 40 \log{d} - 20 \log{h_T} - 20 \log{h_R}
+$$
+
+![[plane earth loss - 2.png]] <br>
+Si noti come il plane earth path loss aumenti molto più rapidamente rispetto al path loss free-space, e che risulta essere indipendente dalla frequenza di lavoro.
+La perdita aumenta di $12 dB$ duplicando la distanza, o di $40 dB$ per decade.
+
+Come anticipato alla fine del Paragrafo [[#6.3 - Free-Space Loss]], il pathloss di ambienti complessi può essere scritto come il pathloss nello spazio libero sommato ad un pathloss in eccesso. <br>
+Nel caso del modello a due raggi terra piatta, tale pathloss è molto semplice da trovare se si lavora utilizzando la rappresentazione in decibel:
+
+$$
+\begin{gather}
+
+L_{pe(dB)} = L_{fs(dB)} + L_{ex(dB)} = L_{fs(dB)} - 20 \log{(\frac{4 π h_T h_R}{λd})}
+
+\\
+\\
+
+L_{ex(dB)} = -20 \log{(\frac{4 π h_T h_R}{λd})}
+
+\end{gather}
+$$
 
 # 6.5 - Obstruction Loss
+In questa casistica il collegamento diretto tra le due antenne è bloccato dall'ostacolo.
+Nella valutazione del pathloss l'ostacolo viene modellato come una lama di coltello, ossia un triangolo puntato verso l'alto che impedisce il passaggio del segnale. <br>
+![[obstruction loss - 1.png]]
+![[obstruction loss - 2.png]]
+> La distanza in pianta dell'ostacolo è molto grande rispetto alle altezze. L'ostacolo dista $d_{TX}$ dalla trasmittente e $d_{RX}$ dalla ricevente.
 
+Il pathloss consta di due contributi, il primo è relativo allo spazio libero mentre il secondo è dovuto alla diffrazione dalla sommità dell'ostacolo:
+
+$$
+L_{(dB)} = L_{fs(dB)} + L_{ke(dB)}
+$$
+
+Il contributo $L_{ke}$ dipende da alcuni parametri geometrici.
+Vengono definiti:
+- $r_1$: distanza tra la trasmittente e la sommità dell'ostacolo;
+- $r_2$: distanza tra la ricevente e la sommità dell'ostacolo;
+- $h$: l'altezza dell'ostacolo rispetto alla retta che congiunge le due antenne;
+- $d_1$ e $d_2$: i due pezzi in cui è divisa la congiungente per via di $h$. In ampiezza $d_1$ è circa uguale a $d_{TX}$ e $d_2$ è circa uguale a $d_{RX}$.
+
+È dimostrabile che il termine 𝐿𝑘𝑒 può essere calcolato tramite l'integrale di Fresnel:
+
+$$
+L_{ke(dB)} = -20 \log{|F(v)|}
+$$
+
+dove:
+
+$$
+\begin{flalign}
+
+F(v) &= \frac{1 + j}{2} \int_v^{\infty}{e^{-j π x^2/2} dx}&&
+\hspace{50mm}
+\tag*{Integrale di Fresnel}
+
+\\
+\\
+
+v &= h \sqrt{\frac{2 (d_1 + d_2)}{λd_1 λd_2}} \cong h \sqrt{\frac{2d}{λ d_{TX} d_{RX}}}&&
+\hspace{50mm}
+\tag*{Parametro di diffrazione di Fresnel}
+
+\end{flalign}
+$$
+
+Il parametro di Fresnel può assumere sia valori positivi che negativi, questo perché $h$ può essere per convenzione sia positiva che negativa (ad esempio se si ha l'ostacolo più basso rispetto al collegamento diretto, quindi il vertice del triangolo sta verso il basso).
+Se $h=0$ l'altezza dell'ostacolo è nulla, cioè la punta dell'ostacolo si trova esattamente sulla congiungente.
+
+$$
+\begin{align}
+
+L_{ke(dB)} \cong -20 \log{(\frac{1}{π ν \sqrt{2}})} = -20 \log{(\frac{0.225}{ν})}
+
+\hspace{20mm}
+
+\text{if} \hspace{5mm} ν>1
+
+\end{align}
+$$
+
+Analizzando i vari scenari di posizione dell’ostacolo rispetto alla congiungente, si otterranno i seguenti risultati:
+1. $ν < 0$: il vertice dell’ostacolo è al disotto della congiungente, dunque l’altezza è negativa. A partire da$ν = -0.8$ a scendere, il pathloss $L_{ke}$ assume comportamento oscillatorio fino a un punto in cui l'ostacolo non aggiunge contributo e lo studio del pathloss si riduce al caso di sola presenza del suolo (modello a 2 raggi terra piana);
+2. $ν = 0$: caso particolare di radenza della congiungente rispetto all’ostacolo, cioè quando la sommità dell'ostacolo sta sulla congiungente, il pathloss $L_{ke}$ vale, in questo caso, $6dB$;
+3. $ν > 0$: l'ostacolo ha attraversato la congiungente, la ricevente cioè è in ombra. Dal grafico sottostante vediamo che all'aumentare di $ν$ (cioè di $h$) la perdita aumenta (il grafico va verso il basso solo perché la rappresentazione è in $-dB$). Per valori positivi del parametro di diffrazione l'andamento è regolare e regolato (cioè approssimabile) alla formula in figura.
+
+![[obstruction loss - 3.png]] <br>
 
 # 6.6 - Gli elissoidi di Fresnel
-
+Un altro modo utile per considerare la diffrazione a lama di coltello è in termini di ostruzione delle **zone di Fresnel** attorno al raggio diretto come illustrato in figura. <br>
+![[elissoidi Fresnel - 1.png]] <br>
+L'n-esima zona di Fresnel è la regione all'interno di un **ellissoide** definito dal luogo dei punti in cui la distanza $a + b$ è maggiore del percorso diretto $d_1 + d_2$ tra trasmettitore e ricevitore di n semilunghezze d'onda. <br>
+![[elissoidi Fresnel - 2.png]] <br>
+Si può pensare che le zone di Fresnel contengano la principale energia di propagazione nell'onda.
+I contributi all'interno della prima zona sono tutti in fase, quindi, **eventuali ostacoli assorbenti che non entrano in questa zona avranno scarso effetto sul segnale ricevuto**.
+Quando l'ostruzione occupa $0,6$ volte la prima zona di Fresnel, il parametro $ν$ è quindi approssimativamente $-0,8$ e la perdita di ostruzione è quindi $0 dB$. <br>
+Questa distanza è spesso utilizzata come criterio per decidere se un oggetto deve essere trattato come un'ostruzione significativa.
+Pertanto, la regione ombreggiata in figura può essere considerata una **regione "proibita" ("forbidden" region)**; se questa regione è tenuta libera allora l'attenuazione del percorso totale sarà praticamente la stessa del caso non ostruito. <br>
+![[elissoidi Fresnel - 3.png]] <br>
+Relativamente alla figura soprastante, si analizzano le zone numerate definendo le seguenti asserzioni:
+1. se l'ostacolo non entra nella zona spaziale proibita, la presenza dell'ostacolo non viene considerata poiché il pathloss che esso causa è trascurabile;
+2. quando l'altezza dell'ostacolo tocca la zona proibita, vuol dire che $h$ vale esattamente $−0.6 \cdot r_1$; da quel punto in poi l'ostacolo dev'essere considerato e il valore di pathloss può essere calcolato con la curva vista nel grafico del paragrafo [[#6.5 - Obstruction Loss]];
+3. se l'ostacolo attraversa la congiungente, $h$ è positiva;
+4. se la punta dell'ostacolo esce dalla zona grigia la perdita continua a crescere.
 
 # 6.7 - Modelli empirici di propagazione
+Se esiste più di un'ostruzione del terreno all'interno dell'ellissoide di Fresnel, deve essere risolto un problema di **diffrazione multipla**.
+Non è corretto sommare semplicemente le perdite per ostruzione di ciascun bordo individualmente, poiché ogni bordo disturba il campo, producendo **fronti d'onda incidenti sul bordo successivo non piani**, contravvenendo alle assunzioni della teoria del bordo singolo. <br>
+==L'approccio più utilizzato per prevedere la diffrazione multipla a coltello consiste nell'utilizzare un **metodo approssimato** utilizzando semplici costruzioni geometriche per calcolare una perdita di diffrazione totale in termini di **combinazioni di diffrazioni** a spigolo singolo tra spigoli adiacenti==. <br>
+Per creare un tale modello, viene effettuata un'**ampia serie di misurazioni effettive** della perdita di percorso, e alle misurazioni viene adattata una funzione appropriata, con parametri derivati per il particolare ambiente, frequenza e altezza delle antenne in modo da ridurre al minimo l'errore tra il modello e le misurazioni.
+Ogni misurazione rappresenta una media di un insieme di campioni, la media locale, rilevata su una piccola area (circa $10-50 m$), al fine di rimuovere gli effetti della dissolvenza rapida.
+**==Il modello può quindi essere utilizzato per progettare sistemi operanti in ambienti simili alle misurazioni originali==**. <br>
+![[modello empirico propagazione.png]] <br>
+Ci sono vari modelli per la valutazione del pathloss, i modelli che possono essere utilizzati sia per ambienti outdoor che indoor sono:
+- **Modelli Empirici**, i quali non hanno una formulazione fisica, ma sono composti da una semplice formula matematica che rappresenta il risultato finale di una campagna di misura fatta precedentemente;
+- **Modelli Deterministici**, dei quali la formulazione finale tiene conto di quello che è fisicamente la propagazione del segnale.
+
+Questa è la differenza fondamentale tra i due modelli.
+
+|   | Modello Empirico  | Modello Deterministico  |
+|---|---|---|
+| PRO  | Consta di una sola formula ed è semplice da implementare.  | È una procedura molto complessa ma il risultato che si ottiene è più attendibile di quello associato a un modello empirico.  |
+| CONTRO  | Poiché deriva da una campagna di misura è stato ricavato da un particolare ambiente | Per poter definire il livello di campo e di potenza devo avere la conoscenza dei meccanismi fisici che regolano la propagazione. <br><br> Per poter dire che c'è diffrazione, trasmissione e riflessione devo avere anche la conoscenza dell'ambiente (presenza di materiale schermante ecc). <br><br> Più complesso è l'ambiente e più complicata risulterà l'analisi. |
 
 
 # 6.8 - Modelli fisici di propagazione
+Sebbene i modelli empirici siano stati ampiamente applicati con buoni risultati, presentano una serie di svantaggi:
+1. possono essere utilizzati **solo su intervalli di parametri inclusi nel set di misurazioni originali**;
+2. gli ambienti devono essere classificati soggettivamente secondo categorie come “urbano”, che hanno significati diversi nei diversi paesi;
+3. non forniscono alcuna comprensione fisica dei meccanismi attraverso i quali avviene la propagazione.
+
+L'ultimo punto è particolarmente significativo, poiché i modelli empirici non sono in grado di tenere conto di fattori come un edificio o una collina insolitamente grandi, che possono modificare notevolmente la propagazione in luoghi particolari. <br>
+![[modello fisico propagazione.png]] <br>
+Sebbene il modello piano-terra (plane-earth) abbia un esponente di perdita di percorso vicino a quello osservato nelle misurazioni effettive, la semplice situazione fisica che descrive è raramente applicabile nella pratica.
+==Il mobile opera quasi sempre (almeno nelle macrocelle) in situazioni in cui non ha un percorso in linea di vista (**LOS**, Line Of Sight) né verso la stazione base né verso il punto di riflessione a terra, quindi la situazione a due raggi non è quasi mai applicabile.== <br>
+I modelli fisici cercano di superare gli svantaggi dei modelli empirici introducendo il **calcolo deterministico dei meccanismi di propagazione delle onde** per ottenere una maggiore accuratezza. <br>
+I **modelli fisici** (o **deterministici**) tengono conto di *tutti i contributi dei raggi* (riflessi, diffratti in base all'ambiente propagativo, ecc.). 
+Il **modello empirico** tiene conto delle *misure strumentali* e unendo tutti i punti di misura si stima il pathloss.

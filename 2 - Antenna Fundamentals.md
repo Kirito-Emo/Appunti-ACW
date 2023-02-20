@@ -286,7 +286,7 @@ Come per la direttività, anche qui si può osservare un legame stretto tra guad
 > Nel caso ideale di un’antenna senza perdite η= 1, guadagno e direttività coincidono.
 
 # 2.9 - Potenza efficace irradiata isotropa
-La **potenza efficace irradiata isotropica (EIRP)** è la potenza che un'antenna isotropa dovrebbe irradiare per ottenere lo stesso valore dell'intensità della radiazione dell'antenna in una direzione fissa.
+La **potenza efficace irradiata isotropa (EIRP)** è la potenza che un'antenna isotropa dovrebbe irradiare per ottenere lo stesso valore dell'intensità della radiazione dell'antenna in una direzione fissa.
 
 $$
 EIRP(θ, Φ) = P_{rad} D(θ, Φ) \rightarrow EIRP = P_{rad} D_{max} = P_{in} G_{max}

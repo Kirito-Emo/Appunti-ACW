@@ -44,7 +44,7 @@ $$
 \end{multline}
 $$
 
-La prima equazione consente di valutare il campo elettrico in un ****punto di osservazione****, nel quale è posizionata l'antenna ricevente.
+La prima equazione consente di valutare il campo elettrico in un **punto di osservazione**, nel quale è posizionata l'antenna ricevente.
 La seconda espressione invece, esprime il campo magnetico come prodotto vettoriale tra il versore radiale e il campo elettrico.
 
 Il campo elettrico è un vettore complesso, infatti compaiono anche i fasori.
@@ -56,7 +56,7 @@ Il campo elettrico è un vettore complesso, infatti compaiono anche i fasori.
 - la parte tra parentesi quadre rappresenta una componente vettoriale, contiene infatti, gli angoli $θ$ (*angolo zenitale*) e $Φ$ (*angolo azimutale*), che individuano una posizione.
 
 Per capire l'utilità e il funzionamento di questi ultimi parametri ($θ$, $Φ$) si immagini di tagliare una sfera con un piano meridiano (verticale).
-L'angolo che si forma tra l'asse $z$ è l'angolo $θ$, il quale varia tra 0°-180Capitolo ￼￼1 - Transmission lines￼°, a seconda della posizione sul *semiasse positivo* o *negativo* di $z$.
+L'angolo che si forma tra l'asse $z$ è l'angolo $θ$, il quale varia tra 0°-180°, a seconda della posizione sul *semiasse positivo* o *negativo* di $z$.
 
 Invece, tagliando la sfera con un piano equatoriale (orizzontale), si ottiene l'angolo tra $x$ ed $y$, che è stato precedentemente denominato come Φ, il quale varia tra 0°-360° secondo le seguenti indicazioni:
 - 0° semiasse positivo di $x$;
@@ -77,7 +77,7 @@ In termini fisici, la polarizzazione della radiazione elettromagnetica è una ca
 La polarizzazione del campo elettrico indica, dunque, **forma e luogo dei punti toccati dal vettore campo elettrico istantaneo**.
 Quando opera in modalità ricevente, un'antenna può estrarre da un campo incidente solo la componente corrispondente alla polarizzazione.
 
-> Campo elettrico e magnetico si muovono ***sempre** nel piano tangente*
+> Campo elettrico e magnetico si muovono **sempre nel piano tangente**
 
 La **differenza di fase δ** tra le funzioni complesse $E_θ$ e $E_Φ$ descrive la polarizzazione (differenza di fase delle due componenti).
 
@@ -101,14 +101,14 @@ $$
 
 \hspace{45mm}
 
-\underline{E}_i(\underline{r}) = |\underline{E}_Φ(\underline{r})| \sin{δ} \hat{Φ}
+\underline{E}_i(\underline{r}) = |E_Φ(\underline{r})| \sin{δ} \hat{Φ}
 
 \end{align}
 $$
 
 La polarizzazione dipende, di fatto, da δ:
 - se $δ = 0, π$ si parlerebbe di ***polarizzazione lineare*** poiché il campo elettrico istantaneo descriverebbe una linea al variare del tempo;
-- se $δ = \pm \frac{π}{2}$ il campo descriverebbe una circonferenza e si parlerebbe, dunque, di ***polarizzazione circolare***. In particolar modo, si parla di:
+- se $δ = \pm \frac{π}{2}$ e $|E_θ| = |E_Φ|$ il campo descriverebbe una circonferenza e si parlerebbe, dunque, di ***polarizzazione circolare***. In particolar modo, si parla di:
 	- **circolazione sinistrorsa (Left-Hand Circulation, LHC)** quando $δ = π/2$ (verso di rotazione orario);
 	- **circolazione destrorsa (Right-Hand Circulation, RHC)** quando $δ = -π/2$ (verso di rotazione antiorario).
 

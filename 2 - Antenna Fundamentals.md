@@ -122,7 +122,8 @@ Dunque:
 
 # 2.4 - Potenza irradiata
 ## 2.4.1 - Vettore di puntamento
-Dati $\tilde{E}$ e $\tilde{H}$ in forma fasoriale, il **vettore di Poynting medio** dell'onda irradiata, anche detto **densità di potenza**, si può ottenere tramite la seguente formula:
+Il vettore di puntamento si determina con il prodotto vettoriale tra campo elettrico e il coniugato del campo magnetico. A sua volta il campo magnetico è dato dal prodotto vettoriale tra il vettore radiale e campo elettrico.
+
 $$
 \begin{multline}
 
@@ -133,7 +134,7 @@ $$
 \\
 \end{multline}
 $$
-Il vettore di puntamento si determina con il prodotto vettoriale tra campo elettrico  il coniugato del campo magnetico. A sua volta il campo magnetico è dato dal prodotto vettoriale tra il vettore radiale e campo elettrico.
+
 La relazione mette in risalto il fatto che il vettore risultante (di Poynting) è reale, cioè tutta la potenza è attiva.
 Inoltre, il vettore $\underline{S}(\underline{r}) \hat{r}$ indica la direzione di propagazione del segnale elettromagnetico. L'ampiezza del vettore di Poynting è $S(r)$.
 ___
@@ -201,7 +202,7 @@ Il **solido (o diagramma) di radiazione** è la rappresentazione grafica in 3D c
 > Nella figura sopra inserita si hanno $θ = 90°$ e $Φ = 0°$, trovandoci sull'asse $x$.
 
 Tramite questo grafico si può intuire quale sia la **direzione di puntamento** (in figura è l'asse $x$).
-La direzione di puntamento è, infatti, quella a cui corrisponde la massimo potenza, dunque quella dove la densità di radiazione è maggiore.
+La direzione di puntamento è, infatti, quella a cui corrisponde la massima potenza, dunque quella dove la densità di radiazione è maggiore.
 
 La direzione di puntamento (o di *massimo*) è contenuta nel **lobo principale** (il *centrale* in figura) dell'antenna.
 
@@ -242,7 +243,7 @@ La $i$ del parametro $D_{dBi}$ indica che stiamo definendo tale parametro in fun
 Tanto più è alto il valore di $D_{dBi}$ tanto più l'antenna è capace di concentrare potenza nella direzione di massimo (il segnale riesce a raggiungere distanze più elevate) e il lobo principale è stretto.
 
 # 2.7 - Beamwidth (Larghezza del fascio)
-La larghezza del fascio di metà potenza (half-power beamwidth HPBW) o, semplicemente, la larghezza del fascio, è definita come la larghezza angolare (o intervallo angolare) del lobo principale tra i due angoli in cui l'ampiezza di $F$ è uguale alla metà del suo valore di picco (o $-3dB$ sulla scala dei decibel).
+La larghezza del fascio di metà potenza (half-power beamwidth (HPBW)) o, semplicemente, la larghezza del fascio, è definita come la larghezza angolare (o intervallo angolare) del lobo principale tra i due angoli in cui l'ampiezza di $F$ è uguale alla metà del suo valore di picco (o $-3dB$ sulla scala dei decibel).
 
 Per dirla brevemente, la larghezza del fascio (o del lobo) è l'intervallo angolare che corrisponde ad un'attenuazione di $3dB$ dell'intensità di radiazione rispetto al suo valore massimo.
 
@@ -295,19 +296,20 @@ $$
 È possibile rappresentare un'antenna, in modo circuitale, tramite un'impedenza $Z_a$, la quale è generalmente complessa.
 Si dice che **un'antenna lavora in risonanza quando la sua parte reattiva è nulla**, ovvero sta assorbendo solo potenza attiva.
 
-|![[Rappresentazione circuitale antenne-1.png]]   | Un'antenna collegata al terminale di uscita di una linea di trasmissione è descritta da: <br> $Z_a = R_a + jX_a$|
+|   |   |
 |---|---|
+|![[Rappresentazione circuitale antenne-1.png]]   | Un'antenna collegata al terminale di uscita di una linea di trasmissione è descritta da: <br> $Z_a = R_a + jX_a$|
 |![[Rappresentazione circuitale antenne-2.png]]   | Antenna in risonanza: $X_a = 0$ <br> Antenna in adattamento: $Z_a = Z_0 \rightarrow Γ_a = 0$  |
 
 Se **$Z_a$ è uguale all'impedenza caratteristica della linea**, le condizioni di adattamento sono soddisfatte; se ciò non accade è necessario utilizzare una rete di adattamento.
 
-Il valore $R_a$ è definito dalla combinazione di due termini: $R_r$ e $R_i$, dove il primo è la **resistenza di radiazione**, mentre il secondo è la **parte resistiva dell'antenna associata alle perdite**, dovute a componenti fisici dell'antenna.
+Il valore $R_a$ è definito dalla combinazione di due termini: $R_r$ e $R_l$, dove il primo è la **resistenza di radiazione**, mentre il secondo è la **parte resistiva dell'antenna associata alle perdite**, dovute a componenti fisici dell'antenna.
 
 La potenza in ingresso può essere espressa come quella irradiata sommata con quella persa:
 $$
 P_{in} = P{rad} + P{loss} = \frac{1}{2} R_r |I_a|^2 + \frac{1}{2} R_l |I_a|^2
 $$
-Questi tre termini permettono di esprimere il **coefficiente di efficienza di radiazione** come il rapporto tra resistenza di radiazione $R_r$ e la somma tra $R_r$ e $R_{loss}$:
+Questi tre termini permettono di esprimere il **coefficiente di efficienza di radiazione** come il rapporto tra resistenza di radiazione $R_r$ e la somma tra $R_r$ e $R_{l}$:
 $$
 η = \frac{P_{rad}} {P_{in}} = \frac{P_{rad}} {P_{rad} + P{loss}} = \frac{R_r} {R_r + R_l} 
 $$
@@ -355,13 +357,13 @@ Esistono due **condizioni ideali di ricezione**:
 
 | Condizione di adattamento in impedenza (o in potenza)  |  Condizione di adattamento in polarizzazione |
 |---|---|
-| Tale condizione è verificata quando l'impedenza del carico è uguale al coniugato dell'impedenza del circuito equivalente (impedenza in ingresso), si ha, cioè, il massimo trasferimento di potenza verso $Z_L$.  | Tale condizione è verificata quando il campo elettrico incidente e il coniugato dell'altezza efficace sono legati da un coefficiente $α$. <br> La polarizzazione del segnale che arriva e quella dell'antenna in ricezione sono compatibili, ciò comporta l'assenza di perdita di potenza legata al disallineamento delle polarizzazioni. Inoltre, tale relazione ci dice che le due grandezze vettoriali sono tra loro parallele.  |
+| Tale condizione è verificata quando l'impedenza del carico è uguale al coniugato dell'impedenza del circuito equivalente (impedenza in ingresso). Si ha, cioè, il massimo trasferimento di potenza verso $Z_L$.  | Tale condizione è verificata quando il campo elettrico incidente e il coniugato dell'altezza efficace sono legati da un coefficiente $α$. <br> La polarizzazione del segnale che arriva e quella dell'antenna in ricezione sono compatibili, ciò comporta l'assenza di perdita di potenza legata al disallineamento delle polarizzazioni. Inoltre, tale relazione ci dice che le due grandezze vettoriali sono tra loro parallele.  |
 | $Z_a^* = Z_L$ | $\underline{E}^i = α \underline{h}^*$ |
 Se tali condizioni sono rispettate, è possibile esprimere la **potenza consegnata al carico** come:
 $$
 P_L = S^i(θ, Φ) \hspace{1.5mm} A_{eff}(θ, Φ) \tag*{W}
 $$
-dove $**S^i$ è la densità di potenza del segnale incidente all'antenna in ricezione** (misurata in $W/m^2$) mentre $A_{eff}$ è la funzione definita come:
+dove **$S^i$ è la densità di potenza del segnale incidente all'antenna in ricezione** (misurata in $W/m^2$) mentre $A_{eff}$ è la funzione definita come:
 $$
 A_{eff}(θ, Φ) = \frac{ζ_0 |\underline{h}(θ, Φ)|^2} {4 R_a} \tag*{$m^2$}
 $$
@@ -380,11 +382,12 @@ dove:
 $$
 ξ = \frac{4 R_a R_L} {|Z_a + Z_L|^2} \le 1
 $$
-	1.1. $R_a$ è la parte resistiva dell'impedenza dell'antenna
-	1.2. $R_L$ è la parte resistiva dell'impedenza in ingresso all'antenna (quella del carico)
+> $R_a$ è la parte resistiva dell'impedenza dell'antenna
+ $R_L$ è la parte resistiva dell'impedenza in ingresso all'antenna (quella del carico)
+
 Tale fattore è sempre compreso tra $0$ e $1$ e vale $1$ in condizioni di adattamento.
 
-2. $χ(θ, Φ)$ è il fattore di disadattamento di polarizzazione, definito come:
+2. $χ(θ, Φ)$ è il **fattore di disadattamento di polarizzazione**, definito come:
 $$
 χ(θ, Φ) = \frac{|\underline{E}^i(θ, Φ) \cdot \underline{h}(θ, Φ)|^2} {|\underline{E}^i(θ, Φ)|^2 |\underline{h}(θ, Φ)|^2} \le 1
 $$

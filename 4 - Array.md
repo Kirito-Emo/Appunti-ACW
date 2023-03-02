@@ -174,7 +174,7 @@ Si supponga ora, di scegliere una frequenza di riferimento $f_0$ al fine di fiss
 $$
 l = n_0 \frac{v}{f_0}
 $$
-Calcolando la differenza di fase tra l'elemento di indice $0$ e l'elemento di indie $1$ alla frequenza di riferimento $f_0$, si avrà:
+Calcolando la differenza di fase tra l'elemento di indice $0$ e l'elemento di indice $1$ alla frequenza di riferimento $f_0$, si avrà:
 $$
 δ_1(f_0) = - \frac{2 π f_0}{v} l = - \frac{2 π f_0}{v} (n_0 \frac{v}{f_0}) = - 2 π n_0
 $$

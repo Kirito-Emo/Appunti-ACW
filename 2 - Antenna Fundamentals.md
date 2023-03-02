@@ -471,7 +471,7 @@ P_{rad} = \int^π_0 \int_0^{2π} {\frac{ζ_0}{8 π^2} |I_0|^2 [\cos{( \frac{π}{
 \end{align}
 $$
 
-Grazie alla relazione appena ricavata, è facilmente dimostrabile che la resistenza associata alle perdite $R_r$ è molto minore della resistenza di radiazione $R_l$ :
+Grazie alla relazione appena ricavata, è facilmente dimostrabile che la resistenza associata alle perdite $R_l$ è molto minore della resistenza di radiazione $R_r$ :
 $$
 \frac{1}{2} R_r |I_0|^2 = P_{rad} = 36.6 |I_0|^2 \longrightarrow R_r = 73.2 \gg R_l
 $$

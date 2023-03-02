@@ -113,7 +113,7 @@ Il **fattore di array** è *funzione delle posizioni dei singoli elementi* e dei
 Il fattore di array è governato dalla **distribuzione di ampiezza dell'array** $a_n$, che serve a controllare la *forma del diagramma* di radiazione dell'array, e dalla **distribuzione di fase dell'array** $ψ_n$, che può essere utilizzata per *orientare la sua direzione*. <br>
 Questo è importantissimo poiché sta a significare che è possibile far variare:
 - forma e ampiezza del lobo principale, variando l'ampiezza del coefficiente di alimentazione dei singoli elementi.
-- direzione di puntamento variando la fase del coeff. di alimentazione dei singoli elementi.
+- direzione di puntamento variando la fase del coefficiente di alimentazione dei singoli elementi.
 
 # 4.3 - Array Lineare Uniforme
 Si consideri un array lineare avente una **distribuzione di ampiezza uniforme** ($\frac{a_n}{a_0} = 1$, l'ampiezza del coefficiente di alimentazione è uguale per tutti gli elementi) e un **ritardo di fase da elemento a elemento linearmente progressivo** ($ψ_n - ψ_0 = nδ$, la differenza di fase tra due elementi vicini tra loro è sempre la stessa). <br>

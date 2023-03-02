@@ -112,7 +112,7 @@ Il **fattore di array** è *funzione delle posizioni dei singoli elementi* e dei
 **Il principio della moltiplicazione dei modelli consente la valutazione della densità di potenza dell'array calcolando prima il modello di potenza con gli elementi dell'array sostituiti con radiatori isotropi, che produce il fattore dell'array, e quindi moltiplicando il risultato per la densità di potenza per un singolo elemento**. <br>
 Il fattore di array è governato dalla **distribuzione di ampiezza dell'array** $a_n$, che serve a controllare la *forma del diagramma* di radiazione dell'array, e dalla **distribuzione di fase dell'array** $ψ_n$, che può essere utilizzata per *orientare la sua direzione*. <br>
 Questo è importantissimo poiché sta a significare che è possibile far variare:
-- forma e ampiezza del lobo principale, variando l'ampiezza del coefficiente di alimentazione dei singoli elementi.
+- forma e ampiezza del lobo principale, variando l'ampiezza del coefficiente di alimentazione dei singoli elementi;
 - direzione di puntamento variando la fase del coefficiente di alimentazione dei singoli elementi.
 
 # 4.3 - Array Lineare Uniforme

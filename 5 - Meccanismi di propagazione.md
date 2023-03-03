@@ -64,7 +64,7 @@ $$
 	k = β -j α = ω_0 \sqrt{μ ε_{eq}}
 	$$
 
-Il campo elettrico potrà essere riscritto come:
+Il campo magnetico potrà essere riscritto come:
 $$
 \underline{H}(\underline{r}) = \underline{H}_0 e^{-j k \hat{β} \cdot \underline{r}} = \frac{1}{ζ} \hat{β} \times \underline{E}_0 e^{-j k \hat{β} \cdot \underline{r}} \equiv \frac{1}{\sqrt{μ/ε_{eq}}} \hat{β} \times \underline{E}_0 e^{-j k \hat{β} \cdot \underline{r}}
 $$
@@ -101,7 +101,7 @@ Quando un'onda piana uniforme è incidente su un confine piano tra due mezzi con
 - Caso c: rappresentazione a fronti d'onda con incidenza obliqua.
 	> Si ricordi che un fronte d'onda coincide con la direzione piana ed è, pertanto, sempre perpendicolare alla direzione di propagazione.
 
-Per definire il coincide con la direzione piano **piano d'incidenza** nello spazio è necessario conoscere due vettori:
+Per definire il **piano d'incidenza** nello spazio è necessario conoscere due vettori:
 - il **versore $β$** associato all'onda incidente;
 - il **versore normale** alla superficie dell'ostacolo.
 
@@ -111,7 +111,7 @@ $$
 \underline{E^i}(\underline{r}) = E_{\parallel}^i \widehat{u_{\parallel}} + E_{\perp}^i(\underline{r}) \widehat{u_{\perp}}
 $$
 
-In problema tridimensionale sarà quindi scomposto in due problemi bidimensionali, di cui le soluzioni verranno infine unite per ottenere quella finale.
+Il problema tridimensionale sarà quindi scomposto in due problemi bidimensionali, di cui le soluzioni verranno infine unite per ottenere quella finale.
 
 # 5.4 - Confine tra due mezzi lossless e Leggi di Snell
 Nel mezzo $1$ dove l’onda si propaga, si hanno i campi elettrico e magnetico incidenti e riflessi, mentre nel mezzo di cui è composto l’ostacolo (mezzo $2$), si avranno soltanto campi elettrico e magnetico trasmesso.
@@ -363,8 +363,7 @@ P^i = \int{\int{\frac{|\underline{E}_0^i|^2}{2ζ_1} \hat{β}^i \cdot \hat{z} \hs
 $$
 
 con $ζ$ impedenza intrinseca del mezzo. <br>
-Coerentemente alla sua propagazione, il versore normale, attraverso 
-cui valutare il flusso, è il versore $z$, il quale è perpendicolare alla superficie ed entrante nell'ostacolo. <br>
+Coerentemente alla sua propagazione, il versore normale, attraverso cui valutare il flusso, è il versore $z$, il quale è perpendicolare alla superficie ed entrante nell'ostacolo. <br>
 Si supponga ora, che la superficie sia così piccola che per ogni suo punto si ha uguale densità di potenza, in tal caso si può portare la *densità* fuori dall'integrale. <br>
 L'integrale di $S$ su $dS$ è proprio uguale all'area della superficie, per cui si ha:
 

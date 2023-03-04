@@ -29,7 +29,7 @@ Il pathloss 𝐿 è il rapporto tra:
 Per ottenere questa stessa potenza non dall'antenna isotropa ma dall'antenna che si sta utilizzando come trasmittente bisogna prendere la potenza in ingresso all'antenna in questione e moltiplicarla per il guadagno dell'antenna stessa. <br>
 Quindi, a parità di potenza trasmessa da un'antenna isotropa e un’antenna di test che si sta usando come trasmittente, è possibile scrivere:
 - il numeratore come il prodotto tra potenza in ingresso e guadagno dell'antenna di test;
-- il denominatore può essere riscritto come il rapporto la potenza in uscita dall'antenna ricevente e il guadagno della ricevente nella direzione del collegamento;
+- il denominatore può essere riscritto come il rapporto tra la potenza in uscita dall'antenna ricevente e il guadagno della ricevente nella direzione del collegamento;
 - la potenza in uscita all’antenna ricevente può infine essere riscritta in funzione della densità di potenza incidente su antenna ricevente ($S_R^i$).
 
 $$
@@ -147,7 +147,7 @@ $$
 Il coefficiente di riflessione, sia per polarizzazione perpendicolare che parallela, può 
 essere approssimato a $-1$ ($Γ \cong -1$). <br>
 Ciò accade perché a grande distanza il raggio $r_2$ viaggia molto vicino al suolo, questo significa che l'angolo di incidenza (l'angolo che forma con la normale alla superficie) rispetto alla normale forma un angolo di $90°$. <br>
-In entrambe le formule della parallelizzazione mi danno coefficienti di riflessione pari a $-1$. <br>
+In entrambe le formule della polarizzazione si ottengono coefficienti di riflessione pari a $-1$. <br>
 È dimostrabile che:
 
 $$

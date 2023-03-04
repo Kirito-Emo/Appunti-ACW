@@ -570,7 +570,7 @@ Ciò significa che **non c'è raggio trasmesso** ma soltanto **riflesso**: **un 
 
 La differenza rispetto al caso di riflessione totale è che:
 - con la riflessione totale: $Γ_{\parallel} = Γ_{\perp} = 1$
-- nel caso PEC: $Γ_{\parallel} = Γ_{\perp} = -1$.
+- nel caso PEC: $Γ_{\parallel} 1$ e $Γ_{\perp} = -1$.
 
 # 5.12 - Lastra lossless
 Si consideri ora il caso in cui si elimina l'ipotesi di spessore infinito dell'ostacolo mantenendo, però, lunghezza e larghezza infinite. <br>
@@ -691,7 +691,7 @@ Il problema nella GTD sviluppata da Keller è legato a non aver considerato il r
 La teoria di Keller sicuramente migliora la predizione del campo rispetto all’ottica geometrica, ma rimane singolare in particolare in corrispondenza dei confini di transizione tra le regioni ombra. <br>
 ![[Uniform GTD.png]] <br>
 Nel 1974 *Kouyoumjian* e *Pathak* presentano la teoria uniforme della diffrazione.
-Essi mostrarono come, moltiplicando il coefficiente di diffrazione di Keller per un’apposita funzione di transizione, si ottenie un campo di valore finito anche in corrispondenza degli **shadow boundaries**.
+Essi mostrarono come, moltiplicando il coefficiente di diffrazione di Keller per un’apposita funzione di transizione, si ottiene un campo di valore finito anche in corrispondenza degli **shadow boundaries**.
 Nei punti di singolarità della GTD, la funzione di transizione deve tendere a $0$ con un ordine pari a quello con cui il coefficiente di diffrazione tende ad infinito.
 Inoltre, i due studiosi svilupparono un coefficiente di diffrazione in grado di considerare superfici curve.
 

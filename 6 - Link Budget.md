@@ -213,7 +213,7 @@ Vengono definiti:
 - $h$: l'altezza dell'ostacolo rispetto alla retta che congiunge le due antenne;
 - $d_1$ e $d_2$: i due pezzi in cui è divisa la congiungente per via di $h$. In ampiezza $d_1$ è circa uguale a $d_{TX}$ e $d_2$ è circa uguale a $d_{RX}$.
 
-È dimostrabile che il termine 𝐿𝑘𝑒 può essere calcolato tramite l'integrale di Fresnel:
+È dimostrabile che il termine $𝐿_{𝑘𝑒}$ può essere calcolato tramite l'integrale di Fresnel:
 
 $$
 L_{ke(dB)} = -20 \log{|F(v)|}

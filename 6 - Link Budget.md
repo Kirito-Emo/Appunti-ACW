@@ -254,9 +254,9 @@ L_{ke(dB)} \cong -20 \log{(\frac{1}{π ν \sqrt{2}})} = -20 \log{(\frac{0.225}{�
 $$
 
 Analizzando i vari scenari di posizione dell’ostacolo rispetto alla congiungente, si otterranno i seguenti risultati:
-1. $ν < 0$: il vertice dell’ostacolo è al disotto della congiungente, dunque l’altezza è negativa. A partire da$ν = -0.8$ a scendere, il pathloss $L_{ke}$ assume comportamento oscillatorio fino a un punto in cui l'ostacolo non aggiunge contributo e lo studio del pathloss si riduce al caso di sola presenza del suolo (modello a 2 raggi terra piana);
+1. $ν < 0$: il vertice dell’ostacolo è al di sotto della congiungente, dunque l’altezza è negativa. A partire da $ν = -0.8$ a scendere, il pathloss $L_{ke}$ assume comportamento oscillatorio fino a un punto in cui l'ostacolo non aggiunge contributo e lo studio del pathloss si riduce al caso di sola presenza del suolo (modello a 2 raggi terra piana);
 2. $ν = 0$: caso particolare di radenza della congiungente rispetto all’ostacolo, cioè quando la sommità dell'ostacolo sta sulla congiungente, il pathloss $L_{ke}$ vale, in questo caso, $6dB$;
-3. $ν > 0$: l'ostacolo ha attraversato la congiungente, la ricevente cioè è in ombra. Dal grafico sottostante vediamo che all'aumentare di $ν$ (cioè di $h$) la perdita aumenta (il grafico va verso il basso solo perché la rappresentazione è in $-dB$). Per valori positivi del parametro di diffrazione l'andamento è regolare e regolato (cioè approssimabile) alla formula in figura.
+3. $ν > 0$: l'ostacolo ha attraversato la congiungente, la ricevente cioè è in ombra. Dal grafico sottostante si può osservare che all'aumentare di $ν$ (cioè di $h$) la perdita aumenta (il grafico va verso il basso solo perché la rappresentazione è in $-dB$). Per valori positivi del parametro di diffrazione l'andamento è regolare e regolato (cioè approssimabile) alla formula in figura.
 
 ![[obstruction loss - 3.png]] <br>
 
